@@ -1,66 +1,236 @@
-# OmniPulse TV: Fire OS & Vega OS Interactive Demo App
+# OmniPulse TV
 
-OmniPulse TV is a production-grade, 10-foot living room and smart display application engineered specifically for **Amazon Fire OS** (Fire TV Stick / Cube, Fire Tablets) and **Amazon Vega OS** (Echo Show, next-gen Linux/web-first Amazon devices).
+OmniPulse TV is a cinematic, smart-living-room experience designed for Amazon Fire OS and Vega OS devices. Built with React, TypeScript, Vite, and Tailwind CSS, it delivers a next-generation 10-foot user interface for sports viewing, family engagement, fitness coaching, and multimodal control.
 
----
+The experience brings together live AI sports analysis, personalization by household profiles, voice and gesture-based interaction, and family-friendly entertainment into one polished TV-first application.
 
-## 🌟 Demo Features
+## Overview
 
-### 1. ⚽ Feature A: "Coach Mode" (Match-Day AI Co-Commentator)
-- **Live 4K Tactical Vision HUD**: Real-time simulated Champions League match with automated player tracking boxes, speed telemetry (e.g. 34.8 km/h sprint speeds), and distance covered.
-- **Explain-It Sports AI Overlay**: On `OFFSIDE`, `FOUL`, or `VAR_CHECK`, stream auto-pauses, annotates freeze-frame tactical graphics, and explains the rule at the active profile's depth (`kid`, `casual`, `expert`) in their commentary tone (`serious`, `hype`, `comedian`).
-- **Interactive Family Call Vote**: Living room vote ("Right Call 👍" vs "Bad Call 👎") awarding family profile points.
-- **Learn-Then-Quiz Loop**: After an explained event, generates a live one-question rule quiz injected directly into Family Trivia.
-- **Halftime / Lull Challenge**: On `HALFTIME` or `LULL`, launches a 30-second speed fitness challenge where reps credit the active viewer's profile score.
-- **Goal Celebration & Living Room Cheer Meter**: Synthesized Web Audio stadium roar, confetti cannons, and cheer meter driven by microphone audio or simulation.
+OmniPulse TV is designed for modern home entertainment hubs where users expect:
 
-### 2. 👨‍👩‍👧‍👦 Feature B: "Family Voices" & Multi-Modal Fusion
-- **Family Profiles**: 4 seeded profiles (Dad, Mom, Teen, Kid) persisted in `localStorage` with personalized commentary tones, avatars, scores, streaks, and badges.
-- **"Who's Watching?" Selector**: D-pad navigable modal reachable from the top header chip or voice.
-- **Multi-Modal Voice & Gesture Fusion**: Resolves voice commands ("Explain that") combined with pointing gestures in &lt;300ms without cloud round-trip.
-- **Speaker Seat Heuristics**: Maps optical gesture frame position (Left, Center, Right couch seats) to family profile actors.
-- **Adaptive TV Hints**: Recommends voice when D-pad navigation stalls, and suggests hand gestures when ambient living room noise is high.
-- **Family Pulse Recap**: Weekly scoreboard summarizing family reps, rules mastered, trivia wins, and badges ("Halftime Hero", "Cheer Leader", "Tactical Master").
+- Fast navigation with a D-pad-first interface
+- Personalized, profile-aware experiences for different family members
+- AI-assisted sports commentary and tactical insights
+- Hands-free interaction through voice and gesture controls
+- A high-visual, immersive design for large displays and living-room use
 
----
+It is built for the experience of watching sports, learning, playing, training, and controlling the interface without needing a touch screen or keyboard.
 
-## 🚀 Running the App
+## Why OmniPulse?
 
-### 1. Start the Dev Server
-From the project folder:
-```powershell
-cd "C:\Users\Sejal Pandey\.gemini\antigravity\scratch\omnipulse-tv"
+Traditional TV experiences are passive. OmniPulse reimagines the living room as an intelligent, interactive environment.
+
+Instead of simply broadcasting content, the platform:
+
+- explains key match moments in plain language,
+- adapts commentary tone to the active user profile,
+- turns home viewing into a collaborative family experience,
+- supports TV-native interaction using smart remote navigation, voice, and gesture input.
+
+## Core Features
+
+### 1. Coach Mode: AI Sports Experience
+
+The sports module provides a high-end live match viewing simulation with intelligent contextual guidance.
+
+Features include:
+
+- Live tactical match simulation with dynamic player tracking
+- Real-time telemetry overlays such as speed, distance, and play analysis
+- Smart annotations for events like offside, fouls, and VAR decisions
+- AI-driven explanations tailored to different viewer profiles
+- Learn-then-quiz loops that turn sport events into educational moments
+- Goal celebrations, crowd energy effects, and live match excitement cues
+
+This transforms passive sports viewing into an interactive educational and entertaining experience.
+
+### 2. Family Profiles and Personalization
+
+OmniPulse supports multiple household profiles with distinct personalities, preferences, and scoring states.
+
+Included profile behavior:
+
+- Dad, Mom, Teen, and Kid personas with separate scores and badges
+- Personalized commentary styles and explanations
+- Profile-aware learning experiences
+- Family leaderboard and progression tracking
+- Local persistence for ongoing household engagement
+
+This makes the app feel tailored to each user rather than generic.
+
+### 3. Family Trivia Arena
+
+The entertainment layer is designed for group participation and shared play.
+
+Capabilities include:
+
+- Interactive trivia and sports knowledge challenges
+- Multi-player family participation model
+- Score-based progression and rewards
+- Seamless transitions from game moments into quiz content
+- Integration with live match events and family engagement loops
+
+### 4. AI Fitness Coach
+
+The fitness experience is tuned for living room workouts and home exercise flows.
+
+Features include:
+
+- Workout guidance for home-based fitness routines
+- Computer-vision-inspired movement and pose tracking
+- Repetition counting and motion feedback
+- Goal-oriented coaching experiences for active family users
+- Integration with the same TV-first interface and low-friction interaction model
+
+### 5. Air Gestures and Voice Control
+
+The multimodal interface allows users to control the app using natural inputs beyond the remote.
+
+Included features:
+
+- Speech recognition for hands-free commands
+- Gesture-based control simulation
+- Context-aware command interpretation
+- Couch-seat and family-person mapping heuristics
+- Adaptive user hints based on current home activity
+
+This makes OmniPulse feel modern, accessible, and better suited for smart homes and large-screen interactions.
+
+### 6. Family Pulse Dashboard
+
+The pulse module delivers a living-room activity summary and household-level insights.
+
+Examples include:
+
+- Weekly family performance recap
+- Badge and streak tracking
+- Learning and activity trends
+- Scoreboard-style summaries for motivation and gamification
+
+### 7. Smart TV UX and 10-Foot Design
+
+The application is specifically designed for TV interfaces and large-screen usability.
+
+Design priorities include:
+
+- Large type and high contrast for readability from a distance
+- D-pad-friendly navigation and non-touch interaction
+- TV-optimized card layouts and smooth transitions
+- Fast loading and responsive dashboard components
+- Ambient UI styling that fits modern smart-home environments
+
+## Application Architecture
+
+The project is structured as a TypeScript-based React application with modular, feature-driven components.
+
+Key folders:
+
+- `src/App.tsx` — main app shell and tab navigation
+- `src/components/` — UI modules for sports, fitness, trivia, profiles, and multimodal controls
+- `src/core/` — core app logic, state, profile handling, and event systems
+- `src/content/` — content, explanations, and match narrative data
+- `src/hooks/` — reusable app behavior and spatial navigation logic
+- `src/utils/` — shared helper functions and audio utilities
+
+## Tech Stack
+
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide React icons
+- Browser speech APIs for voice interactions
+- TV-first UX architecture for Fire OS / Amazon ecosystem and Vega OS-style experiences
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18 or newer
+- npm
+- A modern browser or a Fire TV / Vega OS device on the same local network
+
+### Installation
+
+```bash
+git clone https://github.com/sejalpandey30/Omnipulse.git
+cd Omnipulse
+npm install
+```
+
+### Run in Development Mode
+
+```bash
 npm run dev
 ```
 
-### 2. Access on Fire TV or Vega OS Devices
-- On your PC: Open `http://localhost:3000`
-- On Fire TV / Fire Tablet: Open **Amazon Silk Browser** and navigate to your PC's IP address (e.g., `http://192.168.1.X:3000`).
-- On Vega OS (Echo Show): Open Silk or load via the Web App Launcher.
+Then open:
+
+```text
+http://localhost:3000
+```
+
+For Fire TV or other devices on the same network, open the browser on the device and navigate to:
+
+```text
+http://<your-computer-ip>:3000
+```
+
+### Production Build
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Demo Flow
+
+The app includes a hidden demo director workflow intended for presentation and walkthroughs.
+
+A common demo trigger is:
+
+- Press `Shift + D` to open the demo panel
+- Navigate across sports, fitness, trivia, and multimodal controls
+- Demonstrate profile switching, commentary adaptation, and voice command response
+
+This is ideal for product demonstrations, storytelling, and interactive smart-TV showcases.
+
+## Project Goals
+
+OmniPulse TV is positioned as a demonstration of how everyday television can become:
+
+- more intelligent,
+- more personalized,
+- more interactive,
+- more family-oriented,
+- and richer in experience than passive content delivery.
+
+It is not just an app; it is a full smart-living-room experience concept built around AI, ambient control, and immersive home entertainment.
+
+## License
+
+This project is currently configured as a private repository.
+
+## Contributing
+
+Contributions, feature proposals, and UX improvements are welcome. If you want to extend the experience with:
+
+- additional sport data modules,
+- expanded family games,
+- deeper fitness tracking,
+- or advanced multimodal controls,
+
+the codebase is structured to support modular expansion.
+
+## Final Note
+
+OmniPulse TV showcases the future of home entertainment: a smart TV platform where AI, personalization, and interaction blend seamlessly into one living-room experience.
 
 ---
 
-## 🎬 3-Minute Demo Director Walkthrough Script (Press `Shift + D`)
-
-Press **`Shift + D`** anywhere in the app to toggle the hidden **Demo Director Panel**:
-
-1. **Minute 0:00 - 0:45 | Explain-It & Profile Personalization**:
-   - Navigate to **Coach Mode** tab.
-   - Press **Shift + D** and click **OFFSIDE**. Stream pauses, drawing the offside trap annotation. Notice the explanation for *Dad (expert)*: *"Rule 11 violation: attacker's playable body part was in the opponent's half..."*.
-   - In Demo Director, switch profile to **Kid (Maya)** and click **OFFSIDE** again. Notice the tone instantly transforms to Maya's comedian tone: *"He was so eager for cookies he ran into the kitchen before they came out of the oven!"*.
-   - Click **Right Call 👍** on the family vote (+25 pts).
-
-2. **Minute 0:45 - 1:30 | Learn-Then-Quiz Loop**:
-   - In the explanation card, select **"Take Family Rule Quiz 🏆"**.
-   - Notice the freshly injected Offside rule question at the top of the Family Trivia deck.
-   - Select option **B** with the D-pad; celebrate with confetti and points credited to Maya!
-
-3. **Minute 1:30 - 2:15 | Halftime Fitness Blitz & Goal Celebration**:
-   - Press **Shift + D** and click **HALFTIME**.
-   - The **Halftime 30s Fitness Challenge** launches in Simulation Mode, counting squats with pose trigonometry and awarding the **"Halftime Hero"** badge.
-   - Return to match, press **Shift + D**, and click **GOAL**.
-   - Stadium roar audio plays with confetti, and the **Cheer Meter** fills up to unlock the **"Cheer Leader"** badge (+50 pts).
-
-4. **Minute 2:15 - 3:00 | Multi-Modal Fusion & Family Pulse**:
-   - Go to **Voice & Gestures** tab. Test point + "Explain that" to verify &lt;300ms fused command execution and couch seat detection.
-   - Switch to **Family Pulse** tab to see the weekly family recap with updated scores, reps, and unlocked badges!
+Built for interactive smart homes, connected families, and modern TV experiences.
