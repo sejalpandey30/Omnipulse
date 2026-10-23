@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --tv-overscan-x: 3vw;
+    --tv-overscan-y: 2vh;
+  }
+}
+
+/* TV Overscan Safe Area container */
+.tv-safe-zone {
+  padding-left: var(--tv-overscan-x);
+  padding-right: var(--tv-overscan-x);
+  padding-top: var(--tv-overscan-y);
+  padding-bottom: var(--tv-overscan-y);
+}
+
+/* Smooth D-pad focus transition */
+.tv-focusable {
+  outline: none !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, border-color 0.15s ease;
+  will-change: transform, box-shadow;
+}
+
+.tv-focusable.tv-focused {
+  transform: scale(1.05) translateZ(0);
+  box-shadow: 0 0 0 3px #00A8E1, 0 12px 30px -4px rgba(0, 168, 225, 0.6);
+  z-index: 30;
+}
+
+/* Hide scrollbars for slick TV display */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
